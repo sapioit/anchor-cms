@@ -1,7 +1,6 @@
 <?php echo $header; ?>
 
 <form method="post" action="<?php echo Uri::to('admin/posts/add'); ?>" enctype="multipart/form-data" novalidate>
-
     <input name="token" type="hidden" value="<?php echo $token; ?>">
 
     <fieldset class="header">
@@ -62,7 +61,7 @@
             </p>
             <p>
                 <label for="label-comments"><?php echo __('posts.allow_comments'); ?>:</label>
-                <?php echo Form::checkbox('comments', 1, Input::previous('comments', 0) == 1, array('id' => 'label-comments')); ?>
+                <?php echo Form::checkbox('comments', 1, $checked_comments, array('id' => 'label-comments')); ?>
                 <em><?php echo __('posts.allow_comments_explain'); ?></em>
             </p>
             <p>
